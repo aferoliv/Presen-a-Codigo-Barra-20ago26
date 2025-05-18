@@ -1,0 +1,24 @@
+const fs = require('fs');
+
+let list = []; // Lista inicial
+
+function appendToList(item) {
+    list.push(item); // Adiciona o item à lista
+
+    // Converte a lista para uma string (com quebra de linha entre os itens)
+    const data = list.join('\n');
+
+    // Salva a lista em um arquivo .txt
+    fs.writeFile('lista.txt', data, (err) => {
+        if (err) {
+            console.error('Erro ao salvar o arquivo:', err);
+        } else {
+            console.log('Lista salva no arquivo lista.txt!');
+        }
+    });
+}
+
+// Exemplo de uso:
+appendToList('Item 1');
+appendToList('Item 2');
+appendToList('Item 3');

@@ -1,0 +1,49 @@
+/* Custom styles for the application */   
+   
+/* Custom styles for the application */
+.scrollable-table {
+max-height: 150px;
+grid-column: span 2; /* Se estiver usando CSS Grid */
+width: 50%; /* Para ocupar toda a largura */
+overflow-y: auto; /* Enable vertical scrolling */
+margin-left: auto; /* Empurra a tabela para a direita */
+margin-right: 0; /* Garante que ela fique encostada à direita */
+}
+.scrollable-table thead th {
+    position: sticky;
+    top: 0; /* Fixa o cabeçalho no topo da tabela */
+    background-color: #fff; /* Define uma cor de fundo para o cabeçalho */
+    z-index: 1; /* Garante que o cabeçalho fique acima do conteúdo */
+  }
+.full-width-button {
+width: 100%; /* Full width button */
+}
+.table th,
+.table td {
+font-size: 0.8rem; /* Small font size for table cells */
+padding: 0.2rem; /* Small padding for table cells */
+}
+.label-container {
+display: flex;
+align-items: center;
+}
+.label-container label {
+margin-right: 0.5rem;
+white-space: nowrap; /* Prevent label text wrapping */
+}
+.label-container select,
+.label-container input {
+flex-grow: 1;
+margin-right: 0.5rem;
+}
+/* Add custom height for the derivative chart */
+#derivative-chart {
+height: 300px !important;
+/* Set the height to double */
+}
+.instructions {
+font-size: 14px;
+/* Adjust the font size as needed */
+}
+
+     
