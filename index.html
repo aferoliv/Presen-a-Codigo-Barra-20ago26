@@ -17,72 +17,104 @@
     <div class="container-fluid">
       <!-- Header section -->
       <header class="text-bg-primary text-center py-1 mb-2">
-        <h4 class="mb-0">Coleta de Frequência - Estudos Dirigidos</h4>
+        <h4 class="mb-0">Controle de Frequência - Estudos Dirigidos</h4>
       </header>
+      <div class="presence-layout">
       <!-- Instructions and Connection sections -->
-      <div class="row g-2 mb-2 align-items-center">
-        <div class="col-md-3">
-          <label for="matricula" class="form-label mb-0">Matrícula</label>
+      <div class="row g-2 mb-2 align-items-center presence-info-section">
+        <div class="col-md-1">
+          <label for="matricula" class="form-label mb-3">Matrícula</label>
           <input
             type="number"
             id="matricula"
             class="form-control"
             value=""
           />
-          <div id="espaco-display" class="alert alert-info mt-2">Ocupação: 0</div>
+          
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
+           <label for="espaco" class="form-label mb-0"> Status:</label>  
           <div id="situacao-display" class="alert alert-info">Aguardando Início</div>
         </div>
-        <div class="col-md-2">
-          <button
-            type="button"
-            id="start-data-button"
-            class="btn btn-danger full-width-button"
-            enabled
-          >
-            Começar Leitura
-          </button>
+        <div class="col-md-2 occupancy-panel-col">
+          <div id="espaco-display" class="alert alert-info mt-1"> 0</div>
+          <label for="espaco-display" class="form-label mt-2">Ocupação:</label>
+        </div>
+        
+        </div>
+      </div>
+      <div class="row g-2 mb-2 align-items-center presence-clock-section">
+        <div class="col-12">
+          <div class="alert alert-light text-center clock-box mb-0">
+            <strong>Horário Atual: <span id="clock-display">00:00</span></strong>
+          </div>
         </div>
       </div>
       <!-- Características do Aluno -->
-      <div class="row g-2 mb-2 align-items-center">
-        <div class="col-md-3">
-          <div id="nome-display" class="alert alert-info">Nome Aluno: 0</div>
-          <div id="entrada-display" class="alert alert-info">Hora Entrada: 0</div>
+      <div class="row g-2 mb-2 align-items-start presence-table-section">
+        <div class="col-12 col-lg-6">
+          <!-- Botões de Controle de Sessão e Salvar -->
+          <div class="row g-2 mb-6 align-items-center session-buttons-row">
+            <div class="col-6">
+              <button
+                type="button"
+                id="start-data-button"
+                class="btn btn-danger full-width-button"
+                enabled
+              >
+                Carregar Lista Alunos (.xlsx/.json)
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                type="button"
+                id="session-control-button"
+                class="btn btn-success full-width-button"
+              >
+                Nova Sessão
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                type="button"
+                id="savelistButton"
+                class="btn btn-info full-width-button"
+                enabled>
+                Salvar Log de Presenças
+              </button>
+            </div>
+            <div class="col-6">
+              <button
+                type="button"
+                id="save-summary-button"
+                class="btn btn-primary full-width-button"
+              >
+                Salvar Resumo Permanência
+              </button>
+            </div>
+          </div>
+          <!-- Session Info Display -->
+          <div class="row g-2 mb-2 align-items-center">
+            <div class="col-12">
+              <div id="session-info-display" class="alert alert-secondary text-center">Nenhuma sessão ativa.</div>
+            </div>
+          </div>
         </div>
-        <div class="col-md-2">
-          <div id="max-points-display" class="alert alert-info">Matrícula: 0</div>
-          <div id="permanencia-display" class="alert alert-info">Permanencia: 0</div>
-        </div>
-       
-      </div>
-      <!-- Tabela e botão de salvar -->
-      <div class="row g-2 mb-2 align-items-center">
-        <div class="col">
-          <button
-            type="button"
-            id="savelistButton"
-            class="btn btn-info full-width-button"
-            enabled>
-            Salvar Lista
-          </button>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-lg-6">
+          <!-- Tabela -->
           <div class="scrollable-table">
             <table class="table mt-2">
               <thead>
                 <tr>
-                  <th colspan="5" class="text-center">Informações do Aluno</th>
+                  <th colspan="7" class="text-center">Informações do Aluno</th>
                 </tr>
                 <tr>
+                  <th>ID</th>
                   <th>Matrícula</th>
-                  <th>Permanência /min </th>
-                  <th>Hora Entrada</th>
                   <th>Nome</th>
-                  <th>n°</th>
+                  <th><span class="smaller-label">Entrada</span></th>
+                  <th>Permanência (min)</th>
+                  <th>Situação</th>
                 </tr>
               </thead>
               <tbody id="real-time-table-body">
@@ -92,21 +124,43 @@
           </div>
         </div>
       </div>
-      <div class="col-md-2">
-          <label for="remove-line" class="form-label mb-0">n° linha</label>
+      </div>
+      <div class="row g-2 mb-2 align-items-center">
+        <div class="col-md-3">
+          <label for="remove-line" class="form-label mb-0">Remover 1ª entrada</label>
+          <p class="mb-1">Matrícula:</p>
           <input
             type="number"
-            id="remove-line" 
+            id="remove-line"
             class="form-control"
             value=""
           />
+        </div>
+      </div>
+      
+      <!-- Tempo Mínimo de Permanência -->
+      <div class="row g-2 mb-2 align-items-center">
+        <div class="col-12">
+          <div class="alert alert-info text-center min-time-alert">
+            <strong><span class="smaller-label">Tempo Mínimo de Permanência:</span> <span id="min-time-display">45</span> <span class="smaller-label">minutos</span></strong>
+          </div>
+        </div>
+      </div>
+
     </div>
     <!-- Footer section -->
       <footer class="text-bg-dark text-center py-1 mt-2">
-        <h6 class="mb-0">Footer</h6>
-        <p class="mb-0">Sistema de Presenças - QUI 112 Universidade Federal de Viçosa</p>
+        
+        <p class="mb-0">
+          
+
+          <h5>Sistema de Presenças - QUI 112 Universidade Federal de Viçosa</h5>
+          <h6>Desenvolvido por: ReSCI/LaQuA- www.solucaoquimica.com</h6>
+
+        </p>
       </footer>
     <!-- External JavaScript libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -122,3 +176,4 @@
     <script src="app.js"></script>
   </body>
 </html>
+

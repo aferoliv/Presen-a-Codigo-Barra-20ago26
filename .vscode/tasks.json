@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Abrir app no navegador",
+            "type": "shell",
+            "command": "Start-Process",
+            "args": [
+                "${workspaceFolder}\\index.html"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Servidor HTML local na porta 8000",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": [
+                "-m",
+                "http.server",
+                "8000"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "Executar app Python Tkinter",
+            "type": "shell",
+            "command": "${command:python.interpreterPath}",
+            "args": [
+                "${workspaceFolder}\\Nova pasta\\presenca_tk.py"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Git: status",
+            "type": "shell",
+            "command": "git",
+            "args": [
+                "status",
+                "--short"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "GitHub: publicar alteracoes",
+            "type": "shell",
+            "command": "git add .; git commit -m \"${input:commitMessage}\"; git push origin main",
+            "problemMatcher": []
+        }
+    ],
+    "inputs": [
+        {
+            "id": "commitMessage",
+            "type": "promptString",
+            "description": "Mensagem do commit",
+            "default": "Atualiza projeto"
+        }
+    ]
+}

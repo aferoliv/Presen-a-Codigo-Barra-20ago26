@@ -4,10 +4,10 @@
 .scrollable-table {
 max-height: 150px;
 grid-column: span 2; /* Se estiver usando CSS Grid */
-width: 50%; /* Para ocupar toda a largura */
+width: 100%; /* Ocupa toda a largura da coluna */
 overflow-y: auto; /* Enable vertical scrolling */
-margin-left: auto; /* Empurra a tabela para a direita */
-margin-right: 0; /* Garante que ela fique encostada à direita */
+margin-left: 0;
+margin-right: 0;
 }
 .scrollable-table thead th {
     position: sticky;
@@ -18,6 +18,133 @@ margin-right: 0; /* Garante que ela fique encostada à direita */
 .full-width-button {
 width: 100%; /* Full width button */
 }
+
+.session-buttons-row {
+width: 100%;
+margin-left: 0;
+margin-right: 0;
+}
+
+.presence-layout .row {
+--bs-gutter-y: 0.1rem;
+margin-top: 0 !important;
+}
+
+.presence-layout .alert {
+margin: 0 !important;
+padding-top: 0.2rem;
+padding-bottom: 0.2rem;
+line-height: 1.05;
+}
+
+.presence-layout .mb-2 {
+margin-bottom: 0 !important;
+}
+
+#situacao-display {
+font-size: 10rem;
+}
+
+.occupancy-panel-col {
+display: flex;
+flex-direction: column;
+min-width: 19rem;
+}
+
+#espaco-display {
+width: 100%;
+min-height: 26rem;
+min-width: 19rem;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 0;
+line-height: 1;
+overflow: hidden;
+}
+
+#situacao-display .status-prefix {
+font-size: 0.6em;
+}
+
+#situacao-display .status-top-line {
+display: block;
+white-space: nowrap;
+}
+
+#situacao-display .status-name-line {
+display: block;
+}
+
+.clock-box {
+font-size: 5.5rem;
+font-weight: 700;
+text-align: left !important;
+padding-left: 1.5rem;
+}
+
+.min-time-alert {
+font-size: 0.7rem !important;
+line-height: 1.1;
+}
+
+.min-time-alert strong,
+.min-time-alert span {
+font-size: inherit !important;
+}
+
+.smaller-label {
+font-size: 0.75em !important;
+}
+
+.min-time-alert .smaller-label {
+font-size: 0.85em !important;
+}
+
+@media (min-width: 992px) {
+.presence-layout {
+display: flex;
+flex-direction: column;
+min-height: 24vh;
+gap: 0;
+}
+
+.presence-info-section {
+flex: 2;
+}
+
+.presence-clock-section {
+flex: 1;
+}
+
+.presence-table-section {
+flex: 1;
+}
+}
+
+@media (max-width: 768px) {
+.session-buttons-row {
+width: 100%;
+}
+
+.occupancy-panel-col {
+min-width: 0;
+}
+
+#espaco-display {
+min-height: 14rem;
+min-width: 0;
+}
+
+.clock-box {
+font-size: 3.6rem;
+}
+
+#situacao-display {
+font-size: 10rem;
+}
+}
+
 .table th,
 .table td {
 font-size: 0.8rem; /* Small font size for table cells */

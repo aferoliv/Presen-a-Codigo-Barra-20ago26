@@ -1,0 +1,14 @@
+{
+  "name": "presenca-codigo-barra",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Ferramentas locais para o sistema de presenca por codigo de barras.",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
+    "check-format": "prettier --check \"**/*.{html,css,js,json,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "esbenp.prettier-vscode",
+        "ritwickdey.LiveServer",
+        "GitHub.vscode-pull-request-github",
+        "eamodio.gitlens"
+    ]
+}

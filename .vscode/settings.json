@@ -1,0 +1,32 @@
+{
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        100
+    ],
+    "html.format.wrapLineLength": 100,
+    "css.validate": true,
+    "javascript.validate.enable": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true,
+    "python.terminal.activateEnvironment": true,
+    "terminal.integrated.env.windows": {
+        "Path": "C:\\Program Files\\Git\\cmd;${env:LOCALAPPDATA}\\Programs\\Python\\Python312\\Scripts;${env:LOCALAPPDATA}\\Programs\\Python\\Python312;${env:LOCALAPPDATA}\\Microsoft\\WinGet\\Packages\\OpenJS.NodeJS.LTS_Microsoft.Winget.Source_8wekyb3d8bbwe\\node-v24.19.0-win-x64;${env:Path}"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true
+    }
+}
