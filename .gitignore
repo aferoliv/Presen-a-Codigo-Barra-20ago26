@@ -30,3 +30,7 @@ lista_*.txt
 *.csv
 *.pdf
 courseid_*_participants.json
+
+# Versoes antigas locais: manter fora do GitHub.
+versoes antigas/
+versões antigas/
