@@ -43,6 +43,7 @@ O repositório foi organizado para separar claramente o código da aplicação, 
 - `/docs`: Contém toda a documentação do projeto, incluindo apresentações, manuais em PDF/Word e imagens explicativas.
 - `/samples`: Disponibiliza arquivos de exemplo, como listas de matrículas em CSV, para testar o sistema. **Atenção: Estes arquivos são apenas exemplos e não devem ser confundidos com dados reais de participantes.**
 - `/legacy`: Guarda versões antigas ou alternativas do sistema, como a implementação original em Python (`presenca_tk.py`), mantida apenas para fins de histórico e referência.
+- `/compilador-de-faltas`: Ferramenta em Python (Tkinter) que processa os logs exportados pelo sistema web (entradas/saídas por código de barras) e gera relatórios de presença e permanência em Excel/CSV.
 
 ---
 *Nota: Este repositório foi limpo de arquivos operacionais, logs exportados e planilhas reais de participantes para garantir a segurança e privacidade dos dados.*

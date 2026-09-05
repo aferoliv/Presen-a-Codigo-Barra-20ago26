@@ -30,7 +30,13 @@ lista_*.txt
 *.csv
 *.pdf
 courseid_*_participants.json
+compilador-de-faltas/*.json
 
 # Versoes antigas locais: manter fora do GitHub.
 versoes antigas/
 versões antigas/
+
+# Builds locais (PyInstaller, etc.)
+build/
+dist/
+*.log
